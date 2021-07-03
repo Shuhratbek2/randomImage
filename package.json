@@ -1,0 +1,29 @@
+{
+    "name": "microbot",
+    "version": "1.0.0",
+    "description": "\"microbot sinov\"",
+    "main": "index.js",
+    "scripts": {
+        "start": "micro-bot"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Shuhratbekgo/microbot.git"
+    },
+    "keywords": [
+        "\"micro",
+        "bot",
+        "sinov",
+        "\""
+    ],
+    "author": "Shuhrat",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Shuhratbekgo/microbot/issues"
+    },
+    "homepage": "https://github.com/Shuhratbekgo/microbot#readme",
+    "dependencies": {
+        "telegraf": "^4.4.0",
+        "micro-bot": "^2.5.3"
+    }
+}
