@@ -97,57 +97,29 @@ bot.command("/random", cxt => {
 bot.command("/size", cxt => {
             let text = cxt.message.text.toLowerCase();
             let arr = text.split(" ");
-            // console.log(arr);
+
             if (arr.length === 2) {
                         let size1 = arr[1].split("x");
-                        // console.log(size1);
                         width = isNaN(+size1[0]) ? width : size1[0];
                         height = isNaN(+size1[1]) ? height : size1[1];
-                        // console.log(text, arr[1], size1);
-                        // console.log(width, height );
 
-                        return  cxt.replyWithPhoto({url: `${`https://picsum.photos/${width}/${height}/?random`}` }, { caption: `${width}x${height}`     
+                        return  cxt.replyWithPhoto(
+                            {url: `https://picsum.photos/${width}/${height}/?random` }, 
+                            { caption: `${width}x${height}`}
                         )
             }
-            //         Ava - 640x640
-            // Post - 1080x1080
-            // bot.telegram.sendPhoto(cxt.chat.id, `https://picsum.photos/500/500/?random`)
-            // let urlImage = `https://picsum.photos/${width}/${height}/?random`;
-            // const urlConst;
-            // urlConst = `https://picsum.photos/${width}/${height}/?random`;
+           
             cxt.replyWithPhoto({
-                        url: `${`https://picsum.photos/${width}/${height}/?random`}`
-            }, { caption: `${width}x${height}` }
-            //, parse_mode: 'Markdown' }
-            
-            )
-            // console.log(widht, heigth);
-    })
-    // bot.start()
-
-bot.on(/\/start (\w+)/, ctx => {
-    let arr = ctx.match[1].split("x");
-    console.log(ctx.match[1], arr[0])
-    bot.telegram.sendPhoto(cxt.chat.id, `https://picsum.photos/500/500/?random`)
-        // cxt.replyWithPhoto({
-        //     url: `https://picsum.photos/${+arr[0]}/${+arr[1]}/?random`
-        // })
-})
-
+                        url: `https://picsum.photos/${width}/${height}/?random`
+            },
+             { caption: `${width}x${height}` })
+         
+ })
 
 bot.command('album', (ctx) => {
     let url = "https://picsum.photos/200/500/?random"
     ctx.replyWithMediaGroup([
-        // {
-        //     media: 'AgADBAADXME4GxQXZAc6zcjjVhXkE9FAuxkABAIQ3xv265UJKGYEAAEC',
-        //     caption: 'From file_id',
-        //     type: 'photo'
-        // },
-        // {
-        //     media: `${url}`,
-        //     caption: 'From URL',
-        //     type: 'photo'
-        // },
+  
         {
             media: { url: `${url}` },
             caption: 'Piped from URL',
@@ -163,11 +135,7 @@ bot.command('album', (ctx) => {
             caption: 'Piped from URL',
             type: 'photo'
         },
-        // {
-        //     media: `${url}`,
-        //     caption: 'From URL',
-        //     type: 'photo'
-        // },
+      
         {
             media: { url: `${url}` },
             caption: 'Piped from URL',
