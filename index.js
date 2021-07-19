@@ -66,16 +66,16 @@ bot.start(cxt => {
 
 bot.command("/statika", cxt => {
             cxt.botInfo.can_read_all_group_messages = true;
-            console.log(cxt);
+            // console.log(cxt);
             if (cxt.chat.id === 643428965) {
                 cxt.replyWithHTML(`Botning obunachilari ${obunachilar.length}`);
                 cxt.replyWithHTML(`botdan foydalnagan Foydalanuvchilar ro'yhati  ${
-   
-    userName.map(val =>{
-        return `\n <b> @`+ val +`</b>`;
-    }).join()
-}`)
-       }
+                        
+                            userName.map(val =>{
+                                return `\n <b> @`+ val +`</b>`;
+                            }).join()
+                        }`)
+                }
 })
 
 
@@ -92,24 +92,22 @@ bot.command("/random", cxt => {
     // urlConst = urlImage;
     cxt.replyWithPhoto(URLrasm, { caption: `${width}x${height}` })
 })
+
+
 bot.command("/size", cxt => {
             let text = cxt.message.text.toLowerCase();
             let arr = text.split(" ");
             // console.log(arr);
             if (arr.length === 2) {
-                let size1 = arr[1].split("x");
-                // console.log(size1);
-                width = isNaN(+size1[0]) ? width : size1[0];
-                height = isNaN(+size1[1]) ? height : size1[1];
-                // console.log(text, arr[1], size1);
-                // console.log(width, height );
+                        let size1 = arr[1].split("x");
+                        // console.log(size1);
+                        width = isNaN(+size1[0]) ? width : size1[0];
+                        height = isNaN(+size1[1]) ? height : size1[1];
+                        // console.log(text, arr[1], size1);
+                        // console.log(width, height );
 
-                return  cxt.replyWithPhoto({
-                    url: `${`https://picsum.photos/${width}/${height}/?random`}`
-                  }, { caption: `${width}x${height}` }
-                         //, parse_mode: 'Markdown' }
-        
-                   )
+                        return  cxt.replyWithPhoto({url: `${`https://picsum.photos/${width}/${height}/?random`}` }, { caption: `${width}x${height}`     
+                        )
             }
             //         Ava - 640x640
             // Post - 1080x1080
