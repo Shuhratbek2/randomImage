@@ -138,9 +138,14 @@ bot.command('album', (ctx) => {
         //     caption: 'From file_id',
         //     type: 'photo'
         // },
+        // {
+        //     media: `${url}`,
+        //     caption: 'From URL',
+        //     type: 'photo'
+        // },
         {
-            media: `${url}`,
-            caption: 'From URL',
+            media: { url: `${url}` },
+            caption: 'Piped from URL',
             type: 'photo'
         },
         {
@@ -149,10 +154,15 @@ bot.command('album', (ctx) => {
             type: 'photo'
         },
         {
-            media: `${url}`,
-            caption: 'From URL',
+            media: { url: `${url}` },
+            caption: 'Piped from URL',
             type: 'photo'
         },
+        // {
+        //     media: `${url}`,
+        //     caption: 'From URL',
+        //     type: 'photo'
+        // },
         {
             media: { url: `${url}` },
             caption: 'Piped from URL',
