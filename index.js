@@ -102,17 +102,21 @@ bot.command("/size", cxt => {
                         let size1 = arr[1].split("x");
                         width = isNaN(+size1[0]) ? width : size1[0];
                         height = isNaN(+size1[1]) ? height : size1[1];
-
-                        return  cxt.replyWithPhoto(
-                            {url: `https://picsum.photos/${width}/${height}/?random` }, 
-                            { caption: `${width}x${height}`}
-                        )
+                                            
+                        return   cxt.replyWithPhoto({
+                            url: `https://picsum.photos/${width}/${height}/?random`
+                          },
+                        { caption: `${width}x${height}` })
+                        .catch((err)=>{cxt.replyWithHTML("Boshqa o'lcham yuborib ko'ring"); 
+                                    // console.log(err);
+                                })
             }
            
             cxt.replyWithPhoto({
                         url: `https://picsum.photos/${width}/${height}/?random`
-            },
-             { caption: `${width}x${height}` })
+                },
+                        { caption: `${width}x${height}` }
+             )
          
  })
 
